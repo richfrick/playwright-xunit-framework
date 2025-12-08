@@ -1,0 +1,66 @@
+# ---- .NET build output ----
+bin/
+obj/
+out/
+
+# ---- Rider / IntelliJ ----
+.idea/
+*.sln.iml
+
+# JetBrains caches
+/.idea/**/workspace.xml
+/.idea/**/tasks.xml
+/.idea/**/usage.statistics.xml
+/.idea/**/dictionaries
+/.idea/**/shelf/
+
+# User-specific Rider configs
+.idea/**/contentModel.xml
+.idea/**/modules.xml
+
+# ---- Visual Studio / VS Code ----
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.dbmdl
+
+# ---- NuGet ----
+*.nupkg
+*.snupkg
+packages/
+
+# NuGet restore
+project.lock.json
+project.fragment.lock.json
+
+# ---- Logs / temp ----
+*.log
+*.tlog
+*.tmp
+*.temp
+
+# ---- macOS-specific ----
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ---- Rider build caches ----
+/.idea/.idea-build/
+.idea/.cache/
+
+# ---- Environment ----
+.env
+*.env.local
+.env.*
+
+# ---- Node tools (if you ever add a frontend later) ----
+node_modules/
+dist/
+
+# ---- Misc ----
+*.pid
+*.sln.docstates
