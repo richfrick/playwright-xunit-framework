@@ -1,4 +1,5 @@
-﻿using Framework.Driver;
+﻿using Framework.Config;
+using Framework.Driver;
 using Framework.Driver.Config;
 
 namespace PlaywrightXunitFramework.WebTests;
@@ -7,18 +8,13 @@ public class Tests: IClassFixture<PlaywrightDriverInitializer>
 {
     private PlaywrightDriver _playwrightDriverdriver;
     private PlaywrightDriverInitializer _playwrightDriverInitializer;
+    private TestSettings _testSettings;
     
     public Tests(PlaywrightDriverInitializer playwrightDriverInitializer)
     {
-        TestSettings testSettings = new TestSettings
-        {
-            Headless = false,
-            SlowMo = 0f,
-            DriverType = DriverType.Chrome,
-        };
-
+        _testSettings = ConfigReader.readerConfig();
         _playwrightDriverInitializer = playwrightDriverInitializer;
-        _playwrightDriverdriver = new PlaywrightDriver(testSettings, _playwrightDriverInitializer);
+        _playwrightDriverdriver = new PlaywrightDriver(_testSettings, _playwrightDriverInitializer);
        
     }
 
@@ -26,7 +22,7 @@ public class Tests: IClassFixture<PlaywrightDriverInitializer>
     public async Task Test1()
     {
         var page = await _playwrightDriverdriver.Page;
-        await page.GotoAsync("http://localhost:5173/");
+        await page.GotoAsync(_testSettings.ApplicationUrl);
         await page.Locator("[href=\"/articles?topic=football\"]").ClickAsync();
     }
     
@@ -34,7 +30,7 @@ public class Tests: IClassFixture<PlaywrightDriverInitializer>
     public async Task Test2()
     {
         var page = await _playwrightDriverdriver.Page;
-        await page.GotoAsync("http://localhost:5173/");
+        await page.GotoAsync(_testSettings.ApplicationUrl);
         await page.Locator("[href=\"/articles?topic=cooking\"]").ClickAsync();
     }
     

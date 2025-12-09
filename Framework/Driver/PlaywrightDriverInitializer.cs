@@ -1,3 +1,4 @@
+using Framework.Config;
 using Framework.Driver.Config;
 using Microsoft.Playwright;
 

@@ -56,6 +56,7 @@ Icon?
 .env
 *.env.local
 .env.*
+appsettings.json
 
 # ---- Node tools (if you ever add a frontend later) ----
 node_modules/
@@ -63,4 +64,4 @@ dist/
 
 # ---- Misc ----
 *.pid
-*.sln.docstates
+*.sln.docstatesappsettings.json
