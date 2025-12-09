@@ -64,4 +64,4 @@ dist/
 
 # ---- Misc ----
 *.pid
-*.sln.docstatesappsettings.json
+*.sln.docstates
