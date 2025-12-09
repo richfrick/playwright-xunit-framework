@@ -1,4 +1,4 @@
-using Framework.Driver.Config;
+using Framework.Config;
 using Microsoft.Playwright;
 
 namespace Framework.Driver;
